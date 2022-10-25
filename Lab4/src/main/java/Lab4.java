@@ -13,8 +13,8 @@ public class Lab4 {
         students.add(new Student(1, "B", "Chante Hawes", LocalDate.of(2001, 7, 23)));
         students.add(new Student(2, "A", "Wayne Pierce", LocalDate.of(2001, 1, 5)));
         students.add(new Student(2, "A", "Tyrone Hartley", LocalDate.of(2001, 9, 14)));
-        students.add(new Student(2, "A", "Randy Wilde", LocalDate.of(2001, 1, 5)));
-        students.add(new Student(2, "A", "Etta Patrick", LocalDate.of(2001, 9, 14)));
+        students.add(new Student(3, "A", "Randy Wilde", LocalDate.of(2001, 1, 5)));
+        students.add(new Student(3, "A", "Etta Patrick", LocalDate.of(2001, 9, 14)));
 
         // Date of birth should be in increasing order
         Comparator<Student> dobComparator = Comparator.comparing((Student s) -> s.dateOfBirth);
