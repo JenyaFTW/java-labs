@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Student {
     // Student course
-    public Integer course;
+    private Integer course;
 
     // Group identifier
     public String group;
@@ -14,11 +14,18 @@ public class Student {
     public String lastName;
 
     // Date of birth
-    public LocalDate dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public void display() {
-        String displayString = String.format("%d | %s | %s | %s | %s", course, group, firstName, lastName, dateOfBirth);
-        System.out.println(displayString);
+    public LocalDate getDob() {
+        return this.dateOfBirth;
+    }
+
+    public Integer getCourse() {
+        return this.course;
+    }
+
+    public String toString() {
+        return String.format("%d | %s | %s | %s | %s", course, group, firstName, lastName, dateOfBirth);
     }
 
     public Student(Integer course, String group, String fullName, LocalDate dateOfBirth) {

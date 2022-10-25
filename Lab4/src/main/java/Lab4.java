@@ -17,16 +17,16 @@ public class Lab4 {
         students.add(new Student(3, "A", "Etta Patrick", LocalDate.of(2001, 9, 14)));
 
         // Date of birth should be in increasing order
-        Comparator<Student> dobComparator = Comparator.comparing((Student s) -> s.dateOfBirth);
+        Comparator<Student> dobComparator = Comparator.comparing(Student::getDob);
 
         // Course should be in decreasing order
-        Comparator<Student> courseComparator = Comparator.comparing((Student s) -> s.course).reversed();
+        Comparator<Student> courseComparator = Comparator.comparing(Student::getCourse).reversed();
 
         students.sort(dobComparator);
         students.sort(courseComparator);
 
         for (Student student: students) {
-            student.display();
+            System.out.println(student);
         }
     }
 }
