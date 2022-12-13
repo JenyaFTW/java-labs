@@ -18,7 +18,10 @@ public class Calculator {
         int sum = 0;
         for (short i = a; i <= n; i++) {
             for (short j = b; j <= m; j++) {
-                // System.out.printf("(%d / %d) / (%d + %d)\n", i, j, i, CONSTANT);
+                if (j == 0 | (i + CONSTANT) == 0) {
+                    throw new ArithmeticException("Can't divide by zero");
+                }
+
                 sum += (i / j) / (i + CONSTANT);
             }
         }
