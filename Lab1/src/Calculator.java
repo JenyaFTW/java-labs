@@ -16,8 +16,9 @@ public class Calculator {
 
     public int getSum(short a, short b, int n, int m) {
         int sum = 0;
-        for (short i = a; i <= n; n++) {
-            for (short j = b; j <= m; m++) {
+        for (short i = a; i <= n; i++) {
+            for (short j = b; j <= m; j++) {
+                // System.out.printf("(%d / %d) / (%d + %d)\n", i, j, i, CONSTANT);
                 sum += (i / j) / (i + CONSTANT);
             }
         }
