@@ -21,10 +21,17 @@ public class Lab2 {
          */
 
         byte matrixB[][] = {
-                { 6, 5, 4, 3, 2 },
-                { 12, 6, 3, 2, 1 },
-                { 3, 5, -2, 4, 9 }
+                {6, 5, 4, 3, 2},
+                {12, 6, 3, 2, 1, 5},
+                {3, 5, -2, 4, 9}
         };
+
+        for (int i = 1; i < matrixB.length; i++) {
+            if (matrixB[0].length != matrixB[i].length) {
+                System.err.println("Error: Row has different length than others");
+                return;
+            }
+        }
 
         System.out.println("Initial matrix:");
         Lab2.displayMatrix(matrixB);
@@ -49,7 +56,7 @@ public class Lab2 {
             for (int j = 0; j < matrixC.length; j++) {
                 total += matrixC[j][i];
             }
-            System.out.printf("Col = %d | Avg = %d\n", i, total / matrixC.length);
+            System.out.printf("Col = %d | Avg = %.1f\n", i, (float) total / matrixC.length);
         }
     }
 }

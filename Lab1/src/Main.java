@@ -1,8 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int sum = calculator.getSum((short)2, (short)-2, 8, 8);
+        try {
+            float sum = calculator.getSum((short)2, (short)2, (short)8, (short)8);
 
-        System.out.println("Sum: %s".formatted(sum));
+            System.out.println("Sum: %f".formatted(sum));
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
     }
 }

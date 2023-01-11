@@ -14,15 +14,19 @@ public class Calculator {
      */
     private int CONSTANT = 2;
 
-    public int getSum(short a, short b, int n, int m) {
-        int sum = 0;
-        for (short i = a; i <= n; i++) {
-            for (short j = b; j <= m; j++) {
-                if (j == 0 | (i + CONSTANT) == 0) {
-                    throw new ArithmeticException("Can't divide by zero");
-                }
+    public float getSum(short a, short b, short n, short m) {
+        float sum = 0;
 
-                sum += (i / j) / (i + CONSTANT);
+        if ((b <= 0 && m >= 0) || (a <= -CONSTANT && n >= -CONSTANT)) {
+            throw new ArithmeticException("Can't divide by zero");
+        }
+
+        for (short i = a; i <= n; i++) {
+            int bottom = i + CONSTANT;
+            float incompleteTop = (float) i / bottom;
+
+            for (short j = b; j <= m; j++) {
+                sum += incompleteTop / j;
             }
         }
         return sum;
